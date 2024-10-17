@@ -8,7 +8,7 @@ from progress.spinner import Spinner
 from langchain.schema import HumanMessage, SystemMessage
 from langchain.chat_models.gigachat import GigaChat
 
-chat = GigaChat(credentials="Ваш GigaChatToken", scope="GIGACHAT_API_PERS", verify_ssl_certs=False, streaming=True)
+chat = GigaChat(credentials="MDM1YjkzNjItMzhkYS00NTRkLWI1MzUtOTg5NmZhMjFkYzljOjZlZTVkZjJhLTIxZGYtNDQ5MS05MzZjLTIxNjQ3ODcwMTZmZA==", scope="GIGACHAT_API_PERS", verify_ssl_certs=False, streaming=True)
 
 def import_text(link):
     page = requests.get(link).text
@@ -28,7 +28,7 @@ def generate_answer(text):
         content=""
         )
     ]
-    messages.append(HumanMessage(content= "Сосотавь вопрос по тексту: "+text))
+    messages.append(HumanMessage(content= "Составь вопрос по тексту: "+text))
     res = chat(messages)
     messages.append(res)
     return res.content
